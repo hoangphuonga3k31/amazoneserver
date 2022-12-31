@@ -5,7 +5,7 @@ const dotenv = require("dotenv");
 
 const data = require("./data");
 const seedRouter = require("./routes/seedRoutes");
-const productRouter = require("./routes/ProductRoutes");
+const productRouter = require("./routes/productRoutes");
 const userRouter = require("./routes/userRoutes");
 const orderRouter = require("./routes/orderRoutes");
 
