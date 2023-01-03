@@ -12,6 +12,7 @@ const PAGE_SIZE = 3;
 productRouter.get(
   "/search",
   expressAsyncHandler(async (req, res) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
     const { query } = req;
     const pageSize = query.pageSize || PAGE_SIZE;
     const page = query.page || 1;
