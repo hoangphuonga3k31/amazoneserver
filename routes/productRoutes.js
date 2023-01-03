@@ -13,6 +13,15 @@ productRouter.get(
   "/search",
   expressAsyncHandler(async (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader(
+      "Access-Control-Allow-Methods",
+      "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+    ); // If needed
+    res.setHeader(
+      "Access-Control-Allow-Headers",
+      "X-Requested-With,content-type"
+    ); // If needed
+    res.setHeader("Access-Control-Allow-Credentials", true); // If needed
     const { query } = req;
     const pageSize = query.pageSize || PAGE_SIZE;
     const page = query.page || 1;
@@ -92,6 +101,15 @@ productRouter.get(
   "/categories",
   expressAsyncHandler(async (req, res) => {
     res.setHeader("Access-Control-Allow-Origin", "*");
+    res.setHeader(
+      "Access-Control-Allow-Methods",
+      "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+    ); // If needed
+    res.setHeader(
+      "Access-Control-Allow-Headers",
+      "X-Requested-With,content-type"
+    ); // If needed
+    res.setHeader("Access-Control-Allow-Credentials", true); // If needed
     const categories = await Product.find().distinct("category");
     res.send(categories);
   })
