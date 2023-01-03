@@ -91,6 +91,7 @@ productRouter.get(
 productRouter.get(
   "/categories",
   expressAsyncHandler(async (req, res) => {
+    res.setHeader("Access-Control-Allow-Origin", "*");
     const categories = await Product.find().distinct("category");
     res.send(categories);
   })
