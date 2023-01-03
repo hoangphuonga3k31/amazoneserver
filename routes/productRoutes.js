@@ -1,4 +1,5 @@
 const express = require("express");
+const expressAsyncHandler = require("express-async-handler");
 const Product = require("../models/productModel.js");
 
 const productRouter = express.Router();
